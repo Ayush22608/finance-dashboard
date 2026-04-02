@@ -44,16 +44,19 @@ export const Settings: React.FC = () => {
         <h3 className="text-lg font-semibold dark:text-white border-b border-gray-200 dark:border-gray-800 pb-2">User Role</h3>
         <div className="p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl space-y-4">
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">Set your account role to see how the dashboard UI adapts.</p>
-          <div className="flex space-x-1 bg-gray-100 dark:bg-gray-800 rounded-lg p-1 w-max">
+          <div style={{ display: 'flex' }}>
             {(['Admin', 'Editor', 'Viewer'] as const).map((r) => (
               <button
                 key={r}
                 onClick={() => setRole(r)}
-                className={`px-8 py-2 text-sm font-medium rounded-md transition-all ${
-                  role === r 
-                    ? 'bg-white text-indigo-600 shadow-sm border border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:text-white' 
-                    : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'
-                }`}
+                style={{
+                  padding: '8px 20px',
+                  borderRadius: '8px',
+                  marginRight: '8px',
+                  border: role === r ? '1px solid #4f46e5' : '1px solid #d1d5db',
+                  backgroundColor: role === r ? '#4f46e5' : 'white',
+                  color: role === r ? 'white' : '#374151'
+                }}
               >
                 {r}
               </button>

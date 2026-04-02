@@ -49,16 +49,31 @@ export const Transactions: React.FC = () => {
       transition={{ duration: 0.3 }}
       className="space-y-6"
     >
-      <div className="flex items-center justify-between">
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Transactions</h2>
-        <div className="flex items-center gap-4">
+        <div style={{ display: 'flex', gap: '16px' }}>
           <button 
             onClick={() => exportData(filteredTransactions, 'CSV', 'transactions')}
-            className="flex items-center justify-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-700"
+            style={{
+              border: '1px solid #4f46e5',
+              color: '#4f46e5',
+              backgroundColor: 'white',
+              padding: '8px 16px',
+              borderRadius: '8px'
+            }}
           >
             Export CSV
           </button>
-          <button className="flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg shadow hover:bg-indigo-700">
+          <button 
+            style={{
+              backgroundColor: '#4f46e5',
+              color: 'white',
+              padding: '8px 16px',
+              borderRadius: '8px',
+              border: 'none',
+              cursor: 'pointer'
+            }}
+          >
             Add Transaction
           </button>
         </div>
